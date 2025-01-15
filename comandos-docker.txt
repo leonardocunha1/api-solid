@@ -1,0 +1,8 @@
+docker compose stop
+docker compose up -d
+docker rm (id do container)
+docker ps -a
+docker ps
+
+npx prisma studio
+npx prisma migrate dev
