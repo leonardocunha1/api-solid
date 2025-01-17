@@ -50,7 +50,8 @@ describe('Register Use case', () => {
       password: '123456',
     });
 
-    expect(() =>
+    // usar o await toda vez que tiver uma promisse no expect.
+    await expect(() =>
       registerUseCase.execute({
         name: 'John Doe',
         email,
