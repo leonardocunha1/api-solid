@@ -1,6 +1,5 @@
 // o use-cases também poderia ser chamado de services, mas use-cases é mais comum na comunidade de Clean Architecture.
 
-import { prisma } from '@/lib/prisma';
 import { UsersRepository } from '@/repositories/users-repository';
 import { hash } from 'bcryptjs';
 import { UserAlreadyExistsError } from './errors/user-already-exists-error';
@@ -30,4 +29,3 @@ export class RegisterUseCase {
     });
   }
 }
-
