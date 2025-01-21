@@ -7,3 +7,6 @@ docker ps
 npx prisma studio
 npx prisma migrate dev
 npx prisma db push
+
+
+clean code: começar uma variável com is, has, does... 
