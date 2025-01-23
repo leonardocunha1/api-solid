@@ -29,7 +29,7 @@ describe('Register Use case', () => {
   });
 
   it('should be able to authenticate with wrong email (que não existe)', async () => {
-    expect(() =>
+    await expect(() =>
       sut.execute({
         email: 'johndoe@example.com',
         password: '123456',
@@ -44,7 +44,7 @@ describe('Register Use case', () => {
       password_hash: await hash('123456', 6),
     });
 
-    expect(() =>
+    await expect(() =>
       sut.execute({
         email: 'johndoe@example.com',
         password: '3333333',
