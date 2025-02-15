@@ -25,12 +25,18 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
     return checkInOnSameDate;
   }
 
+  async findManyByUserId(userId: string, page: number) {
+    return this.items
+      .filter((checkIn) => checkIn.user_id === userId)
+      .slice((page - 1) * 20, page * 20);
+  }
+
   async create(data: Prisma.CheckinUncheckedCreateInput) {
     const checkIn = {
       id: randomUUID(),
       user_id: data.user_id,
       gymId: data.gymId,
-      validated_at: data.validated_at ? new Date(data.validated_at) : null,
+      validated_at: data.validated_at ? new Date(data.validated_at) : null, // aqui esta sendo feito: se o validated_at for passado, ele converte para Date, senão, ele passa null
       created_at: new Date(),
     };
 

@@ -1,12 +1,24 @@
-docker compose stop
-docker compose up -d
-docker rm (id do container)
-docker ps -a
-docker ps
+docker compose stop → Para todos os containers definidos no docker-compose.yml, mas não os remove.
+docker compose up -d → Inicia os containers em modo "detached" (em segundo plano), usando as configurações do docker-compose.yml.
+docker rm (id do container) → Remove um container específico pelo seu ID (é necessário que o container esteja parado).
+docker ps -a → Lista todos os containers, incluindo os que estão parados.
+docker ps → Lista apenas os containers em execução.
 
-npx prisma studio
-npx prisma migrate dev
-npx prisma db push
+quando não tiver usando o docker compose:
 
+    docker run --name api-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=apisolid -p 5432:5432 bitnami/postgresql
+        Esse comando cria e executa um container Docker para um banco de dados PostgreSQL usando a imagem bitnami/postgresql. Aqui está o que cada parte faz:
+            docker run → Cria e executa um novo container.
+            --name api-solid-pg → Define o nome do container como api-solid-pg.
+            -e POSTGRESQL_USERNAME=docker → Define a variável de ambiente POSTGRESQL_USERNAME com o valor docker (usuário do banco).
+            -e POSTGRESQL_PASSWORD=docker → Define a variável POSTGRESQL_PASSWORD com o valor docker (senha do banco).
+            -e POSTGRESQL_DATABASE=apisolid → Define a variável POSTGRESQL_DATABASE com o valor apisolid (nome do banco).
+            -p 5432:5432 → Mapeia a porta 5432 do container para a porta 5432 do host (máquina local), permitindo acesso ao PostgreSQL.
+            bitnami/postgresql → Usa a imagem bitnami/postgresql para criar o container com PostgreSQL.
+            Esse comando essencialmente inicia um banco PostgreSQL dentro de um container, tornando-o acessível na porta 5432.
+
+npx prisma studio → Abre a interface gráfica do Prisma Studio para visualizar e editar os dados do banco.
+npx prisma migrate dev → Aplica as migrações pendentes ao banco de dados e atualiza o esquema.
+npx prisma db push → Sincroniza o banco de dados com o esquema do Prisma sem criar migrações.
 
 clean code: começar uma variável com is, has, does... 
