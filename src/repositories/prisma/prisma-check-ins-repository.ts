@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 
 export class PrismaCheckInsRepository implements CheckInsRepository {
   async findById(id: string) {
-    const checkIn = await prisma.checkIn.findUnique({
+    const checkIn = await prisma.checkin.findUnique({
       where: {
         id,
       },
