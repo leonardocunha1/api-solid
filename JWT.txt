@@ -1,0 +1,9 @@
+// JWT: JSON WEB TOKEN
+
+// Usuário faz login, envia email/sensitiveHeaders, o back-end cria um token ÚNICO, não modificável e STATELESS (não precisa de banco de dados para verificar se o usuário está logado). O token é enviado para o usuário, que o guarda no localstorage. O token é enviado em todas as requisições, e o back-end verifica se o token é válido.
+
+// Back-end: Quando vai criar o token JWT, ele recebe um payload (informações do usuário) e uma chave secreta (string). O token é criado com base no payload e na chave secreta. O token é enviado para o usuário.
+
+// Palavra-chave: akjlkasdfjsdklfj3l4k5jl2k3jsaldkfjsdlkjfsdlkfsjla
+
+// e-mail/senha -> header.payload.signature 
