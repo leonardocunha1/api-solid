@@ -8,11 +8,10 @@ export default defineConfig({
   test: {
     workspace: [
       {
-        extends: true,
         test: {
           name: 'e2e',
           include: ['src/http/controllers/**.spec.ts'],
-          environment: 'node',
+          environment: 'prisma',
         },
       },
       {
