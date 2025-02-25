@@ -12,6 +12,9 @@ export default defineConfig({
           name: 'e2e',
           include: ['src/http/controllers/**.spec.ts'],
           environment: 'prisma',
+          alias: {
+            '@': path.resolve(__dirname, './src'),
+          },
         },
       },
       {

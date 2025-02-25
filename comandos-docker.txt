@@ -1,6 +1,8 @@
 ATENÇÃO!!!!!!!!!!!!! ÀS VEZES NO EXECUTAR services.msc TEM O POSTEGRESQL RODANDO EM SEGUNDO PLANO, PRECISA PAUSAR ISSO!!
 ATENÇÃO 2!!!!!!!!!!! OLHAR SE O BANCO FOI CRIADO!!!
 
+DICA: RODAR O NPM RUN TEST:E2E -- -h exibirá todos os -- (parâmetros) possíveis, isso não vale apenas para o vitest
+
 PROBLEMAS COM O VITEST->>> NÃO RECONHECE O ALIASES, RODAR NO TERMINAL npm install @vitest/ui@latest vite-tsconfig-paths@latest vitest@latest @vitest/coverage-v8@latest -D
 
 docker compose stop → Para todos os containers definidos no docker-compose.yml, mas não os remove.
