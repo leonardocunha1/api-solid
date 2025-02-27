@@ -8,7 +8,7 @@ export async function nearby(request: FastifyRequest, reply: FastifyReply) {
     longitude: z.number().refine((value) => value >= -180 && value <= 180),
   });
 
-  const { latitude, longitude } = nearbyGymsQuerySchema.parse(request.body);
+  const { latitude, longitude } = nearbyGymsQuerySchema.parse(request.query);
 
   const searchGymsUseCase = makeFetchNearbyGymsUseCase();
 
