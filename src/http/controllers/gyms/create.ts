@@ -1,6 +1,4 @@
-import { UserAlreadyExistsError } from '@/use-cases/errors/user-already-exists-error';
 import { makeCreateGymUseCase } from '@/use-cases/factories/make-create-gym-use-case';
-import { makeRegisterUseCase } from '@/use-cases/factories/make-register-use-case';
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { z } from 'zod';
 
@@ -16,9 +14,9 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
   const { title, description, phone, latitude, longitude } =
     createGymBodySchema.parse(request.body);
 
-  const registerUseCase = makeCreateGymUseCase();
+  const createUseCase = makeCreateGymUseCase();
 
-  await registerUseCase.execute({
+  await createUseCase.execute({
     title,
     description,
     phone,
