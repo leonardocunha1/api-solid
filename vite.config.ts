@@ -10,7 +10,7 @@ export default defineConfig({
       {
         test: {
           name: 'e2e',
-          include: ['src/http/controllers/**.spec.ts'],
+          include: ['src/http/controllers/**/**.spec.ts'],
           environment: 'prisma',
           alias: {
             '@': path.resolve(__dirname, './src'),
