@@ -6,10 +6,12 @@ export async function refresh(request: FastifyRequest, reply: FastifyReply) {
     onlyCookie: true,
   });
 
+  const { role } = request.user;
+
   // o request.user.sub fica disponível após a verificação do JWT (request.jwtVerify)
 
   const token = await reply.jwtSign(
-    {},
+    { role },
     {
       sign: {
         sub: request.user.sub,
@@ -18,7 +20,7 @@ export async function refresh(request: FastifyRequest, reply: FastifyReply) {
   );
 
   const refreshToken = await reply.jwtSign(
-    {},
+    { role },
     {
       sign: {
         sub: request.user.sub,

@@ -19,6 +19,7 @@ function generateDatabaseURL(schema: string) {
   return url.toString();
 }
 
+// ISSO AQUI SERVE PARA CRIAR UM AMBIENTE DE TESTE PARA O PRISMA. NELE, ESTÁ SENDO UM BANCO DE DADOS DIFERENTE PARA CADA TESTE E NO FINAL DE CADA TESTE, O BANCO DE DADOS É DELETADO.
 export default <Environment>{
   name: 'prisma',
   transformMode: 'ssr',
