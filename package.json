@@ -11,9 +11,9 @@
     "build": "tsup src --out-dir build",
     "test": "vitest --run --project unit",
     "test:watch": "vitest --project unit",
-    "pretest:2e2": "run-s test:create-prisma-environment test:install-prisma-environment",
-    "test:2e2": "vitest --run --project e2e",
-    "test:watch:2e2": "vitest --project e2e",
+    "pretest:e2e": "run-s test:create-prisma-environment test:install-prisma-environment",
+    "test:e2e": "vitest --run --project e2e",
+    "test:watch:e2e": "vitest --project e2e",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest ui"
   },
